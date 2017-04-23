@@ -1,0 +1,90 @@
+
+body 
+{
+background-color: #BF3340;
+font-family: 'Ubuntu', sans-serif;
+color:white;
+
+}
+
+#top
+{
+width:100%;
+}
+
+#corbyn
+{
+z-index: -1;
+width:100%;
+position: absolute;
+
+}
+#titlefloat
+ {
+width:74%;
+font-size:1.5em;
+margin-top:25px;
+}
+
+#dancingcorbyn {
+   position:fixed;
+   right:0px;
+   bottom:102px;
+}
+
+#dancingcorbynimg
+{
+ height: 50%;
+}
+
+
+#footer {
+   position:fixed;
+   left:0px;
+   bottom:0px;
+   height:100px;
+   width:100%;
+   background:#C50037 ;
+}
+
+#corbynface{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.playpause
+{
+    width:70px;
+	height:50px;
+	float:left;
+	padding-top:10px;
+	margin-top:10px;
+	margin-bottom:80px;
+	margin-left:20px;
+	margin-right:10px;
+	border:outset;
+	border-style: 18px  outset;
+	border-color:#F5D04C;
+	border-width:10px;
+	-webkit-border-radius: 50px;
+	-moz-border-radius: 50px;
+	border-radius: 50px;
+	background:#c4a63c;
+	font-size:2em;
+	text-align:center;
+}
+
+.playpause:hover {
+    background:#F5D04C;
+	cursor:pointer;
+}
+
+.playpause:active {
+  border-style: 9px  outset;  
+  border-width:5px;
+	width:80px;
+	height:60px;
+
+}
+

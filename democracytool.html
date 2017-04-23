@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" media="screen and (max-width: 900px)" href="main-mobile.css" type="text/css">
+<link rel="stylesheet" media="screen and (min-width: 901px)" href="main-desktop.css" type="text/css">
+<link href='http://fonts.googleapis.com/css?family=Ubuntu:400,700' rel='stylesheet' type='text/css'>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+<title>CORBYNDEMOCRACYTOOL</title>
+</head>
+<body>
+<audio controls autoplay hidden>
+  <source src="urbanspaceman.mp3" type="audio/mpeg">
+</audio>
+
+<div id="footer">
+
+<div id="buttonfloat">
+<div class="playpause" id="zoomin">
+&#x25B2;
+</div>
+<div class="playpause" id="zoomout">
+&#x25BC;
+</div>
+</div>
+
+<div id="titlefloat";>
+JEREMY CORBYN DEMOCRACY TOOL<br/>
+</div>
+<div id="textcontent">
+Exercise your democratic right to increase or decrease the size of Jeremy Corbyns face.
+</div>
+<div id="counter" style="float:right;">0</div>
+</div>
+
+<div id="corbyn">
+
+<img src="corbynface.gif" id="corbynface" >
+
+</div>
+
+<div id="dancingcorbyn">
+<img src="megacorbyn.gif" style="height:250px;">
+</div>
+
+
+
+<script>
+    $( document ).ready(function() {
+
+        var totalVotes = 0;
+        var voteCasting = false;
+
+        function getCurrentVotes() {
+            $.ajax({url: "getvotes.php", success: function(result){
+                updatePage(parseInt(result));
+            }});
+        }
+
+        $( "#zoomin" ).click(function() {
+            if (!voteCasting) {
+                voteCasting = true;
+                registerVote(1);  
+            }
+            
+        });
+
+        $( "#zoomout" ).click(function() {
+            if (!voteCasting) {
+                votecasting = true;
+                registerVote(-1);
+            }
+        });
+
+        function registerVote(vote) {
+            $.ajax({  
+                type: 'POST',  
+                url: 'vote.php', 
+                data: { vote: vote },
+                success: function(response) {
+                    updatePage(parseInt(response));
+                    voteCasting = false;
+                }
+            });
+            
+        }
+
+        function updatePage(currentVotes) {
+            totalVotes = currentVotes;
+            $( "#counter" ).text(totalVotes);
+            $( "#corbynface" ).width((totalVotes * 10) + 50);
+        }
+
+        getCurrentVotes();
+
+    });
+
+
+
+    
+</script>
+
+
+
+</body>
+</html>

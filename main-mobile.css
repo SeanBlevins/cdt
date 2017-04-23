@@ -1,0 +1,72 @@
+
+body 
+{
+background-color: #BF3340;
+font-family: 'Ubuntu', sans-serif;
+color:white;
+}
+
+
+
+#dancingcorbyn {
+display:none;
+}
+
+#textcontent 
+{
+   position:absolute;
+   left:0px;
+   bottom:0px;
+   z-index: -1;
+}
+
+#footer {
+   width:100%;
+   background:#C50037 ;
+}
+
+
+#titlefloat
+ {
+float:right;
+width:74%;
+font-size:1.5em;
+}
+
+#buttonfloat
+ {
+float:left;
+width:25%;
+}
+
+
+
+.playpause
+{
+    width:60px;
+	height:30px;
+	padding-top:4px;
+	margin-top:2px;
+	border:outset;
+	border-style: 10px  outset;
+	border-color:#F5D04C;
+	border-width:4px;
+	background:#c4a63c;
+	font-size:1.5em;
+	text-align:center;
+}
+
+.playpause:hover {
+    background:#F5D04C;
+	cursor:pointer;
+}
+
+.playpause:active {
+ 
+  border-width:8px;
+  	width:52px;
+	height:24px;
+
+
+}
+
